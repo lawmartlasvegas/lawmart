@@ -44,7 +44,6 @@ header {
     height: 75px;
 }
 
-/* Unique Logo Custom Styles */
 .logo-container {
     display: flex;
     align-items: center;
@@ -88,7 +87,6 @@ nav ul li a:hover, nav ul li a.active {
     color: var(--secondary-color);
 }
 
-/* New Relevant Legal Document Banner Graphic */
 .hero {
     color: var(--white);
     padding: 120px 0;
@@ -97,8 +95,8 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .homepage-banner {
-    background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(30, 58, 138, 0.88)), 
-                url('https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1920&q=80') 
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80') 
                 no-repeat center center/cover;
 }
 
@@ -157,7 +155,6 @@ nav ul li a:hover, nav ul li a.active {
     gap: 30px;
 }
 
-/* Card Updates to host high quality images safely */
 .card {
     background-color: var(--white);
     border-radius: 8px;
@@ -279,14 +276,4 @@ footer {
         height: auto;
         padding: 20px 0;
         gap: 15px;
-    }
-    nav ul li {
-        margin: 0 12px;
-    }
-    .hero h1 {
-        font-size: 32px;
-    }
-    .hero p {
-        font-size: 18px;
-    }
-}
+    }}
