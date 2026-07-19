@@ -8,8 +8,14 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">LawMart</div>
+        <div class="container header-flex">
+            <!-- CSS SVG Styled Unique Logo -->
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3H19ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">Law<span class="logo-accent">Mart</span></span>
+            </div>
             <nav>
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
@@ -21,10 +27,11 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
+    <!-- Refreshed Dynamic Banner / Hero Section -->
+    <section class="hero homepage-banner">
+        <div class="container hero-content">
             <h1>Affordable, Accurate Document Preparation</h1>
-            <p>We help you navigate life's major transitions with legal document preparation for Divorce, Immigration, Estate Planning, and Record Sealing.</p>
+            <p>Skip the guesswork and complex legal fees. We provide clear, reliable, and perfectly structured document kits tailored for your life transitions.</p>
             <a href="#contact" class="btn">Get Started Today</a>
         </div>
     </section>
@@ -34,24 +41,44 @@
             <h2>Our Specialized Services</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Divorce</h3>
-                    <p>Streamlined and stress-free preparation of dissolution paperwork, custody agreements, and asset division forms.</p>
-                    <a href="services/divorce.html" class="more-link">Learn More &rarr;</a>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Divorce Agreements" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3>Divorce</h3>
+                        <p>Streamlined and stress-free preparation of dissolution paperwork, custody agreements, and asset division forms.</p>
+                        <a href="services/divorce.html" class="more-link">Learn More &rarr;</a>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Immigration</h3>
-                    <p>Accurate assistance with family petitions, adjustment of status, citizenship, and visa renewal applications.</p>
-                    <a href="services/immigration.html" class="more-link">Learn More &rarr;</a>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80" alt="Immigration Forms" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3>Immigration</h3>
+                        <p>Accurate assistance with family petitions, adjustment of status, citizenship, and visa renewal applications.</p>
+                        <a href="services/immigration.html" class="more-link">Learn More &rarr;</a>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Estate Planning</h3>
-                    <p>Protect your legacy with customized Wills, Living Trusts, Powers of Attorney, and Healthcare Directives.</p>
-                    <a href="services/estate-planning.html" class="more-link">Learn More &rarr;</a>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" alt="Estate Planning Documents" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3>Estate Planning</h3>
+                        <p>Protect your legacy with customized Wills, Living Trusts, Powers of Attorney, and Healthcare Directives.</p>
+                        <a href="services/estate-planning.html" class="more-link">Learn More &rarr;</a>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Record Sealing</h3>
-                    <p>Get a fresh start. We prepare petition packages to expunge or seal eligible past criminal records.</p>
-                    <a href="services/record-sealing.html" class="more-link">Learn More &rarr;</a>
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Record Sealing Packets" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3>Record Sealing</h3>
+                        <p>Get a fresh start. We prepare petition packages to expunge or seal eligible past criminal records.</p>
+                        <a href="services/record-sealing.html" class="more-link">Learn More &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>

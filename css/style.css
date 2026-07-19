@@ -1,6 +1,8 @@
 :root {
+    --primary-dark: #0f172a;
     --primary-color: #1e3a8a;
-    --secondary-color: #3b82f6;
+    --secondary-color: #2563eb;
+    --accent-gold: #d97706;
     --text-color: #334155;
     --bg-light: #f8fafc;
     --white: #ffffff;
@@ -35,18 +37,35 @@ header {
     z-index: 100;
 }
 
-header .container {
+.header-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 75px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+/* Unique Logo Custom Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
     color: var(--primary-color);
-    letter-spacing: 0.5px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+}
+
+.logo-accent {
+    color: var(--secondary-color);
 }
 
 nav ul {
@@ -55,100 +74,151 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 24px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 nav ul li a:hover, nav ul li a.active {
     color: var(--secondary-color);
 }
 
+/* New Relevant Legal Document Banner Graphic */
 .hero {
-    background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.95)), url('https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
     color: var(--white);
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
+    position: relative;
+}
+
+.homepage-banner {
+    background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(30, 58, 138, 0.88)), 
+                url('https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1920&q=80') 
+                no-repeat center center/cover;
+}
+
+.hero-content {
+    max-width: 800px;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 46px;
+    font-weight: 800;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .hero p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    font-size: 20px;
+    margin-bottom: 35px;
+    opacity: 0.95;
 }
 
 .btn {
     display: inline-block;
     background-color: var(--secondary-color);
     color: var(--white);
-    padding: 12px 28px;
+    padding: 14px 32px;
     text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+    border-radius: 6px;
+    font-weight: 700;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    transition: all 0.2s ease;
 }
 
 .btn:hover {
-    background-color: #2563eb;
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px -1px rgba(37, 99, 235, 0.3);
 }
 
 .services-section, .about-section, .contact-section {
-    padding: 80px 0;
+    padding: 90px 0;
 }
 
 .services-section h2, .about-section h2, .contact-section h2 {
     text-align: center;
-    font-size: 32px;
-    color: var(--primary-color);
-    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--primary-dark);
+    margin-bottom: 50px;
+    font-weight: 800;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
+/* Card Updates to host high quality images safely */
 .card {
     background-color: var(--white);
-    padding: 30px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.06);
+}
+
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--primary-dark);
 }
 
 .card p {
     margin-bottom: 20px;
     font-size: 15px;
+    color: #475569;
+    flex-grow: 1;
 }
 
 .more-link {
     text-decoration: none;
     color: var(--secondary-color);
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.more-link:hover {
+    color: #1d4ed8;
 }
 
 .about-section {
@@ -157,27 +227,35 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .about-section p {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 19px;
+    color: #475569;
 }
 
 .contact-section form {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     background-color: var(--white);
-    padding: 40px;
-    border-radius: 6px;
+    padding: 45px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 }
 
 .contact-section input, .contact-section select, .contact-section textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
     font-size: 16px;
+    background-color: #f8fafc;
+}
+
+.contact-section input:focus, .contact-section select:focus, .contact-section textarea:focus {
+    outline: 2px solid var(--secondary-color);
+    background-color: var(--white);
 }
 
 .feedback-msg {
@@ -187,23 +265,28 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--primary-dark);
     color: #94a3b8;
-    padding: 30px 0;
+    padding: 40px 0;
     text-align: center;
     font-size: 14px;
+    border-top: 4px solid var(--secondary-color);
 }
 
 @media(max-width: 768px) {
-    header .container {
+    .header-flex {
         flex-direction: column;
         height: auto;
-        padding: 15px 0;
+        padding: 20px 0;
+        gap: 15px;
     }
-    nav ul {
-        margin-top: 15px;
+    nav ul li {
+        margin: 0 12px;
     }
     .hero h1 {
-        font-size: 28px;
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 18px;
     }
 }
