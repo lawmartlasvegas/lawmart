@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+<title id="title">Do Brasil aos Estados Unidos</title><desc id="desc">Ilustração de uma jornada entre o Brasil e os Estados Unidos com documentos organizados.</desc>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9fff2"/><stop offset="1" stop-color="#e9f2ff"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-opacity=".14"/></filter></defs>
+<rect width="900" height="720" rx="56" fill="url(#sky)"/>
+<circle cx="745" cy="120" r="72" fill="#ffcf24" opacity=".9"/>
+<path d="M0 540c120-70 244-77 370-20 170 77 348 62 530-46v246H0Z" fill="#07883f" opacity=".1"/>
+<path d="M42 603c169-86 333-75 493 31 102 68 225 67 365 4v82H42Z" fill="#1769aa" opacity=".12"/>
+<g fill="#1769aa" opacity=".2"><path d="M620 238h27v194h-27zM660 192h34v240h-34zM708 266h40v166h-40zM760 220h29v212h-29zM802 286h42v146h-42z"/></g>
+<g filter="url(#s)" transform="translate(138 128)"><rect width="410" height="475" rx="32" fill="#fff"/><rect x="42" y="42" width="326" height="76" rx="18" fill="#f2f8f5"/><circle cx="82" cy="80" r="20" fill="#07883f"/><path d="m82 65 15 15-15 15-15-15Z" fill="#ffcf24"/><rect x="122" y="65" width="186" height="12" rx="6" fill="#063e2b" opacity=".82"/><rect x="122" y="88" width="120" height="9" rx="5" fill="#1769aa" opacity=".35"/><g fill="#dfe9e4"><rect x="42" y="154" width="326" height="18" rx="9"/><rect x="42" y="193" width="286" height="18" rx="9"/><rect x="42" y="232" width="326" height="18" rx="9"/><rect x="42" y="271" width="244" height="18" rx="9"/></g><g><circle cx="57" cy="335" r="15" fill="#07883f"/><path d="m50 335 5 5 10-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="88" y="326" width="235" height="16" rx="8" fill="#063e2b" opacity=".13"/></g><g><circle cx="57" cy="384" r="15" fill="#1769aa"/><path d="m50 384 5 5 10-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="88" y="375" width="205" height="16" rx="8" fill="#063e2b" opacity=".13"/></g><rect x="42" y="429" width="162" height="18" rx="9" fill="#ffcf24"/></g>
+<path d="M552 182c55-55 108-68 159-39" fill="none" stroke="#07883f" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 22"/>
+<path d="m708 139 39 2-20 34" fill="#07883f"/>
+</svg>

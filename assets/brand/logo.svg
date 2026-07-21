@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
+<title id="title">LawMart</title><desc id="desc">LawMart legal document preparation logo</desc>
+<g fill="none" fill-rule="evenodd">
+  <path d="M18 97h85" stroke="#C69A45" stroke-width="3"/>
+  <path d="M30 91V50L60 25l30 25v41" stroke="#0A2745" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 91V57h36v34M51 57v34M69 57v34" stroke="#C69A45" stroke-width="4"/>
+  <path d="M25 50h70M35 43h50M48 33h24" stroke="#0A2745" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="60" cy="21" r="4" fill="#C69A45"/>
+  <text x="122" y="73" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#0A2745" letter-spacing="-1">LawMart</text>
+  <text x="126" y="99" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#6B7784" letter-spacing="3.4">DOCUMENT PREPARATION</text>
+</g>
+</svg>
