@@ -1,0 +1,15 @@
+{
+  "name": "LawMart Document Preparation",
+  "short_name": "LawMart",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F2",
+  "theme_color": "#0A2745",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

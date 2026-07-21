@@ -1,45 +1,24 @@
-# LawMart GitHub Pages Website
+# LawMart Phase 3 Release
 
-This site is built with plain HTML, CSS, and JavaScript. It does not require a framework, build command, package manager, or server.
+Complete GitHub Pages replacement package.
 
-## Required repository structure
+## Included
+- Phase 1 homepage and Phase 2 service pages
+- Resource center and three educational guides
+- Privacy and thank-you pages
+- Google Business/Profile link integration
+- Optional booking, Formspree-style form endpoint, and GA4 configuration
+- Event tracking hooks, enhanced schema, sitemap, robots, manifest, 404 page
+- Scroll progress, refined motion, and performance/accessibility improvements
 
-Upload the files directly to the root of your GitHub repository:
+## Upload
+Upload **all files and folders in this directory** to the root of the GitHub repository. Keep Pages set to `main` and `/(root)`.
 
-```text
-index.html
-styles.css
-script.js
-README.md
-```
+## Activate integrations
+Edit `site-config.js`:
+- `GA4_MEASUREMENT_ID`: add a value such as `G-XXXXXXXXXX`. Leave blank to disable analytics.
+- `GOOGLE_BUSINESS_URL`: replace with the exact LawMart Google Business Profile URL when available.
+- `BOOKING_URL`: add a Calendly or other scheduling URL. Leave blank to use the on-page contact flow.
+- `FORM_ENDPOINT`: add a Formspree or compatible endpoint. Leave blank to retain the email-application fallback.
 
-Do not upload only the ZIP file. Extract it first.
-
-## Publish with GitHub Pages
-
-1. Open the repository on GitHub.
-2. Go to **Settings**.
-3. Select **Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Choose the **main** branch and **/(root)** folder.
-6. Click **Save**.
-
-Your site should appear at:
-
-```text
-https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/
-```
-
-## Before publishing
-
-Replace the placeholder phone number and email address in `index.html`.
-
-The contact form currently uses FormSubmit and points to:
-
-```text
-hello@lawmartlv.com
-```
-
-Replace that email in the form `action` attribute with the email address that should receive inquiries. FormSubmit may require an email confirmation the first time the form is used.
-
-Review all legal service descriptions and disclaimers for compliance with applicable Nevada rules before public use.
+No fabricated reviews, client counts, awards, or business credentials are included. Add only claims that can be substantiated.
