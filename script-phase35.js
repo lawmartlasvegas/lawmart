@@ -291,6 +291,7 @@
         const script = d.createElement('script');
         script.src = A;
         script.async = true;
+        script.onerror = () => { window.__calEmbedFailed = true; };
         d.head.appendChild(script);
         cal.loaded = true;
       }
@@ -315,6 +316,7 @@
     layout:'month_view',
     styles:{branding:{brandColor:'#C9A24A'}}
   });
+  Cal.ns['free-phone-consultation']('preload', {calLink:'brenden-greystone-dhxm1y/free-phone-consultation'});
 
   Cal('init', 'in-person-consultation', {origin:'https://cal.com'});
   Cal.ns['in-person-consultation']('ui', {
@@ -322,9 +324,23 @@
     layout:'month_view',
     styles:{branding:{brandColor:'#C9A24A'}}
   });
+  Cal.ns['in-person-consultation']('preload', {calLink:'brenden-greystone-dhxm1y/in-person-consultation'});
+
+  // Keep visitors on LawMart. The Cal.com embed script handles the same click
+  // through data-cal-link/data-cal-namespace and opens its modal.
+  document.addEventListener('click', (event) => {
+    const el = event.target.closest('[data-cal-link]');
+    if (!el) return;
+    const fallback = el.dataset.calFallbackHref;
+    if (window.__calEmbedFailed && fallback) {
+      location.href = fallback;
+      return;
+    }
+    event.preventDefault();
+  }, {capture:true});
 })();
 
-// LawMart 2.0 Phase 3: Ads-ready conversion measurement
+// LawMart 2.0 Phase 3.5: Ads-ready conversion measurement
 (() => {
   const track = window.lawmartTrack;
   if (typeof track !== 'function') return;
@@ -352,34 +368,44 @@
     }
   }, {capture:true});
 
-  // Cal.com Embed SDK emits bookingSuccessfulV2 after a booking is completed.
-  // We deliberately extract only the event type; no attendee PII is sent to GA4.
+  // Phase 3.5 production tracking: Cal.com namespaced embeds require namespaced event listeners.
+  // bookingSuccessfulV2 fires only after a fresh booking has been created.
   const registerCalSuccess = () => {
     if (typeof window.Cal !== 'function' || window.__lawmartCalSuccessRegistered) return;
-    window.__lawmartCalSuccessRegistered = true;
-    window.Cal('on', {
-      action: 'bookingSuccessfulV2',
-      callback: (event) => {
-        let snapshot = '';
-        try { snapshot = JSON.stringify(event?.detail?.data || event?.detail || {}).toLowerCase(); } catch {}
-        const appointmentType = snapshot.includes('in-person-consultation') ? 'in_person' :
-          snapshot.includes('free-phone-consultation') ? 'free_phone' : 'appointment';
-        const key = `lawmartBooking:${appointmentType}:${new Date().toISOString().slice(0,10)}`;
-        try {
-          if (sessionStorage.getItem(key)) return;
-          sessionStorage.setItem(key, '1');
-        } catch {}
-        track('appointment_booked', {
-          appointment_type: appointmentType,
-          currency: appointmentType === 'in_person' ? 'USD' : undefined,
-          value: appointmentType === 'in_person' ? 50 : undefined
-        });
-      }
+    const namespaces = [
+      ['free-phone-consultation','free_phone'],
+      ['in-person-consultation','in_person']
+    ];
+    let registered = 0;
+    namespaces.forEach(([namespace, appointmentType]) => {
+      const api = window.Cal.ns && window.Cal.ns[namespace];
+      if (typeof api !== 'function') return;
+      api('on', {
+        action:'bookingSuccessfulV2',
+        callback:(event) => {
+          const detail = event?.detail || {};
+          const data = detail.data || {};
+          const uid = typeof data.uid === 'string' ? data.uid.slice(0,120) : '';
+          const key = `lawmartBooking:${appointmentType}:${uid || data.startTime || new Date().toISOString()}`;
+          try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key,'1'); } catch {}
+          track('appointment_booked', {
+            appointment_type:appointmentType,
+            conversion_source:'cal_embed',
+            booking_status:typeof data.status === 'string' ? data.status : undefined,
+            payment_required:typeof data.paymentRequired === 'boolean' ? data.paymentRequired : undefined,
+            currency:appointmentType === 'in_person' ? 'USD' : undefined,
+            value:appointmentType === 'in_person' ? 50 : undefined
+          });
+        }
+      });
+      registered += 1;
     });
+    if (registered === namespaces.length) window.__lawmartCalSuccessRegistered = true;
   };
   registerCalSuccess();
   setTimeout(registerCalSuccess, 500);
   setTimeout(registerCalSuccess, 1800);
+  setTimeout(registerCalSuccess, 3500);
 
   // Phase 3.1 fallback: if a future Cal.com plan enables redirects, this page
   // can still record a completed booking. Phase 3.2 does not require redirects.
