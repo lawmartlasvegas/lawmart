@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" role="img" aria-labelledby="t d">
+<title id="t">Friendly LawMart document preparation illustration</title><desc id="d">A friendly representative holding a checklist beside organized document stacks with a Las Vegas skyline in the background.</desc>
+<defs><linearGradient id="cream" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#FFF7E8"/><stop offset="1" stop-color="#F8E7C4"/></linearGradient><linearGradient id="shirt" x1="0" x2="1"><stop stop-color="#0B2E55"/><stop offset="1" stop-color="#154B7A"/></linearGradient></defs>
+<rect width="900" height="760" rx="48" fill="url(#cream)"/>
+<path d="M635 135h190v330H635z" fill="#EAF4FA" opacity=".88"/><path d="M665 465V325h36v140m24 0V267h31v198m24 0V350h28v115" fill="#B7CCDA" opacity=".75"/>
+<path d="M753 145l12 120h-24z" fill="#90A9B9"/><rect x="748" y="220" width="10" height="95" fill="#90A9B9"/><ellipse cx="753" cy="226" rx="28" ry="7" fill="#90A9B9"/><path d="M697 180l32 35M811 178l-32 35" stroke="#fff" stroke-width="8" opacity=".6"/>
+<ellipse cx="475" cy="700" rx="335" ry="35" fill="#D7C59F" opacity=".45"/>
+<!-- person -->
+<g>
+<path d="M398 334c37-74 156-82 204-8 28 43 19 94 6 121-17 37-5 78 34 117H307c50-37 66-73 42-119-19-37-10-80 49-111z" fill="url(#shirt)"/>
+<path d="M430 185c-30 20-39 56-33 96 6 43 31 86 83 91 55 5 94-37 103-84 8-39-3-82-39-103-34-20-81-21-114 0z" fill="#F2A46C"/>
+<path d="M402 244c-9-57 21-112 83-119 44-5 84 11 105 45-22-10-41-9-64 1 24 6 39 19 49 35-37-5-67-19-98-39-19 25-38 43-75 77z" fill="#2E211A"/>
+<ellipse cx="442" cy="269" rx="11" ry="16" fill="#27201B"/><ellipse cx="530" cy="269" rx="11" ry="16" fill="#27201B"/><path d="M458 315c20 18 45 18 66 0" fill="none" stroke="#8F4B33" stroke-width="7" stroke-linecap="round"/><path d="M475 281c-2 18-3 25 7 29" fill="none" stroke="#C77C53" stroke-width="4" stroke-linecap="round"/>
+<path d="M596 423c52-32 93-21 111 13 17 31 6 82-21 108-19 18-41 23-62 11" fill="#F2A46C"/>
+<path d="M672 425c10-26 32-42 51-30 17 11 12 37-6 57 28-6 46 4 42 22-5 24-38 24-66 18" fill="#F2A46C"/>
+<!-- polo logo -->
+<rect x="526" y="432" width="54" height="42" rx="9" fill="#082444" stroke="#F3BB2B" stroke-width="3"/><text x="553" y="461" text-anchor="middle" font-family="Georgia,serif" font-size="25" font-weight="700"><tspan fill="#fff">L</tspan><tspan fill="#F3BB2B">M</tspan></text>
+</g>
+<!-- clipboard -->
+<g transform="translate(170 365) rotate(-5 125 150)"><rect x="0" y="0" width="255" height="310" rx="24" fill="#8C6134"/><rect x="15" y="17" width="225" height="278" rx="15" fill="#fff"/><rect x="82" y="0" width="92" height="34" rx="14" fill="#6F7479"/><circle cx="127" cy="11" r="7" fill="#D4D7DA"/><text x="34" y="73" font-family="Arial" font-size="25" font-weight="700" fill="#0B2E55">Simple process</text><path d="M40 107l12 12 21-27" fill="none" stroke="#D89400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><text x="86" y="121" font-family="Arial" font-size="21" fill="#40566D">Clear steps</text><path d="M40 160l12 12 21-27" fill="none" stroke="#D89400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><text x="86" y="174" font-family="Arial" font-size="21" fill="#40566D">Flat fees</text><path d="M40 213l12 12 21-27" fill="none" stroke="#D89400" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><text x="86" y="227" font-family="Arial" font-size="21" fill="#40566D">Done right</text></g>
+<!-- paper stack -->
+<g transform="translate(600 535)"><rect x="0" y="105" width="220" height="42" rx="8" fill="#fff" stroke="#D7DEE4"/><rect x="8" y="70" width="216" height="42" rx="8" fill="#fff" stroke="#D7DEE4"/><rect x="18" y="35" width="210" height="42" rx="8" fill="#fff" stroke="#D7DEE4"/><rect x="28" y="0" width="198" height="42" rx="8" fill="#fff" stroke="#D7DEE4"/><text x="74" y="28" font-family="Arial" font-size="18" font-weight="700" fill="#0B2E55">Divorce</text><text x="62" y="63" font-family="Arial" font-size="18" font-weight="700" fill="#0B2E55">Immigration</text><text x="58" y="98" font-family="Arial" font-size="18" font-weight="700" fill="#0B2E55">Record sealing</text><text x="55" y="133" font-family="Arial" font-size="18" font-weight="700" fill="#0B2E55">Estate planning</text></g>
+</svg>
