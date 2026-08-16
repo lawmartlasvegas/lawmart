@@ -1,45 +1,39 @@
-# LawMart GitHub Pages Website
+# LawMart website — production deployment
 
-This site is built with plain HTML, CSS, and JavaScript. It does not require a framework, build command, package manager, or server.
+Current production package for lawmartlasvegas.com.
 
-## Required repository structure
+## Clean URLs
+- `/divorce/` — divorce document preparation
+- `/wills-trusts/` — wills and trusts document preparation
+- `/record-sealing/`
+- `/immigration/`
+- `/imigracao-brasileira/`
+- `/pricing/`
+- `/resources/`
 
-Upload the files directly to the root of your GitHub repository:
+Compatibility pages remain for older URLs such as `/divorce-document-preparation/` and `/estate-planning/`.
 
-```text
-index.html
-styles.css
-script.js
-README.md
-```
+## Integrations
+- GA4 conversion/event tracking
+- Cal.com embedded booking popups
+- Stripe payment links and success tracking
+- Formspree lead forms
 
-Do not upload only the ZIP file. Extract it first.
+## Deployment
+Upload the contents of this ZIP to the root of the GitHub Pages repository. Preserve folders exactly, including `wills-trusts/index.html` and `divorce/index.html`.
 
-## Publish with GitHub Pages
+`.nojekyll` is intentionally included so GitHub Pages serves the site as static files.
 
-1. Open the repository on GitHub.
-2. Go to **Settings**.
-3. Select **Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Choose the **main** branch and **/(root)** folder.
-6. Click **Save**.
 
-Your site should appear at:
+## Phase 3.9 updates
+- Immigration canonical URL: `/immigration/`; old `/immigration-document-preparation/` route redirects for compatibility.
+- Homepage service information areas are now large Learn More targets.
+- Divorce, Record Sealing, and Wills & Trusts $500 prices are direct Stripe payment buttons labeled Pay now to get started.
+- Immigration remains consultation-first because online checkout has not been enabled for immigration services.
 
-```text
-https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/
-```
+## Phase 3.10 updates
+- Reuses the existing GA4 Google tag (`G-43CBCXFRX3`) instead of installing a duplicate base tag.
+- Connects the existing Google tag to Google Ads account tag `AW-18347713352`.
+- Adds Google Ads website-call forwarding configuration for `(702) 900-1003` using the Google-provided phone conversion configuration.
+- Keeps existing GA4 events, Cal.com booking tracking, Stripe success tracking, and Formspree lead tracking intact.
 
-## Before publishing
-
-Replace the placeholder phone number and email address in `index.html`.
-
-The contact form currently uses FormSubmit and points to:
-
-```text
-hello@lawmartlv.com
-```
-
-Replace that email in the form `action` attribute with the email address that should receive inquiries. FormSubmit may require an email confirmation the first time the form is used.
-
-Review all legal service descriptions and disclaimers for compliance with applicable Nevada rules before public use.
