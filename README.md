@@ -37,3 +37,10 @@ Upload the contents of this ZIP to the root of the GitHub Pages repository. Pres
 - Adds Google Ads website-call forwarding configuration for `(702) 900-1003` using the Google-provided phone conversion configuration.
 - Keeps existing GA4 events, Cal.com booking tracking, Stripe success tracking, and Formspree lead tracking intact.
 
+
+## Phase 3.11 updates
+
+- Expanded the `/divorce/` pricing section into a four-part cost breakdown: LawMart flat fee, court filing fee, optional process-server cost, and publication cost where applicable.
+- Clarified that a court fee waiver may be requested from the court and that third-party service/publication costs vary.
+- Added the Las Vegas office/location section from the homepage to the divorce landing page.
+- Added a $50 in-person appointment option and clarified that the full $50 is credited toward the $500 divorce document-preparation fee if the client proceeds.
