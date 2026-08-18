@@ -44,3 +44,10 @@ Upload the contents of this ZIP to the root of the GitHub Pages repository. Pres
 - Clarified that a court fee waiver may be requested from the court and that third-party service/publication costs vary.
 - Added the Las Vegas office/location section from the homepage to the divorce landing page.
 - Added a $50 in-person appointment option and clarified that the full $50 is credited toward the $500 divorce document-preparation fee if the client proceeds.
+
+
+## Phase 3.14 updates
+
+- Replaces the divorce pricing summary estimate with the full Ready to Move Forward payment CTA.
+- Integrates that CTA into the bottom of the existing divorce pricing shell with the navy/white/gold treatment.
+- Removes the duplicate standalone divorce payment section and removes the About $800 estimate.
