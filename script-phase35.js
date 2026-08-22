@@ -111,6 +111,7 @@
       pagePath === '/resources/divorce-document-checklist/'
     ) return {
       service: 'divorce',
+      label: 'Text About $500 Divorce',
       message: "Hi, I'm interested in LawMart's $500 divorce service."
     };
     if (
@@ -120,6 +121,7 @@
       pagePath === '/resources/wills-trusts-information-checklist/'
     ) return {
       service: 'wills_and_trusts',
+      label: 'Text About $500 Will & Trust',
       message: "Hi, I'm interested in LawMart's $500 will & trust package."
     };
     if (
@@ -127,6 +129,7 @@
       pagePath === '/resources/record-sealing-preparation/'
     ) return {
       service: 'record_sealing',
+      label: 'Text About $500 Record Sealing',
       message: "Hi, I'm interested in LawMart's $500 record sealing service."
     };
     if (
@@ -134,10 +137,12 @@
       pagePath === '/immigration-document-preparation/'
     ) return {
       service: 'immigration',
+      label: 'Text About Immigration',
       message: "Hi, I'm interested in LawMart's immigration document preparation services."
     };
     return {
       service: 'general',
+      label: 'Text LawMart',
       message: "Hi, I'd like information about LawMart's flat-fee document preparation services."
     };
   })();
@@ -147,7 +152,7 @@
     const bodySeparator = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
     smsButton.className = 'sms-float';
     smsButton.href = `sms:+17029001003${bodySeparator}body=${encodeURIComponent(smsDetails.message)}`;
-    smsButton.textContent = 'Text LawMart';
+    smsButton.textContent = smsDetails.label;
     smsButton.setAttribute('aria-label', `Text LawMart: ${smsDetails.message}`);
     smsButton.dataset.track = 'sms_click';
     smsButton.dataset.service = smsDetails.service;
