@@ -97,11 +97,67 @@
     const href = link.getAttribute('href') || '';
     const common = {link_text:(link.textContent||'').trim().replace(/\s+/g,' ').slice(0,100), link_url:link.href||href};
     if (link.dataset.track) track(link.dataset.track, {...common, service_name:link.dataset.service||undefined});
+    else if (href.startsWith('sms:')) track('sms_click', common);
     else if (href.startsWith('tel:')) track('phone_click', common);
     else if (href.startsWith('mailto:')) track('email_click', common);
     else if (/wa\.me|whatsapp\.com/i.test(href)) track('whatsapp_click', common);
     else if (/^https?:/i.test(href) && link.hostname && link.hostname !== location.hostname) track('outbound_click', common);
   });
+
+  const smsDetails = (() => {
+    if (
+      pagePath.startsWith('/divorce/') ||
+      pagePath === '/divorce-document-preparation/' ||
+      pagePath === '/resources/divorce-document-checklist/'
+    ) return {
+      service: 'divorce',
+      label: 'Text About $500 Divorce',
+      message: "Hi, I'm interested in LawMart's $500 divorce service."
+    };
+    if (
+      pagePath === '/wills-trusts/' ||
+      pagePath === '/estate-planning/' ||
+      pagePath === '/resources/estate-planning-information-checklist/' ||
+      pagePath === '/resources/wills-trusts-information-checklist/'
+    ) return {
+      service: 'wills_and_trusts',
+      label: 'Text About $500 Will & Trust',
+      message: "Hi, I'm interested in LawMart's $500 will & trust package."
+    };
+    if (
+      pagePath === '/record-sealing/' ||
+      pagePath === '/resources/record-sealing-preparation/'
+    ) return {
+      service: 'record_sealing',
+      label: 'Text About $500 Record Sealing',
+      message: "Hi, I'm interested in LawMart's $500 record sealing service."
+    };
+    if (
+      pagePath === '/immigration/' ||
+      pagePath === '/immigration-document-preparation/'
+    ) return {
+      service: 'immigration',
+      label: 'Text About Immigration',
+      message: "Hi, I'm interested in LawMart's immigration document preparation services."
+    };
+    return {
+      service: 'general',
+      label: 'Text LawMart',
+      message: "Hi, I'd like information about LawMart's flat-fee document preparation services."
+    };
+  })();
+
+  if (!document.querySelector('.sms-float')) {
+    const smsButton = document.createElement('a');
+    const bodySeparator = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
+    smsButton.className = 'sms-float';
+    smsButton.href = `sms:+17029001003${bodySeparator}body=${encodeURIComponent(smsDetails.message)}`;
+    smsButton.textContent = smsDetails.label;
+    smsButton.setAttribute('aria-label', `Text LawMart: ${smsDetails.message}`);
+    smsButton.dataset.track = 'sms_click';
+    smsButton.dataset.service = smsDetails.service;
+    document.body.appendChild(smsButton);
+  }
 
   document.querySelectorAll('[data-google-business]').forEach(link => {
     link.href = config.GOOGLE_BUSINESS_URL || 'https://www.google.com/search?q=LawMart+Las+Vegas';
