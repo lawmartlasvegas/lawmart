@@ -155,7 +155,7 @@
     const hasHeaderPlacement = Boolean(headerActions || headerCta?.parentElement);
     smsButton.className = hasHeaderPlacement ? 'header-sms' : 'sms-float';
     smsButton.href = `sms:+17029001003${bodySeparator}body=${encodeURIComponent(smsDetails.message)}`;
-    smsButton.textContent = hasHeaderPlacement ? `✉ ${smsDetails.label}` : smsDetails.label;
+    smsButton.textContent = hasHeaderPlacement ? '✉ Text' : smsDetails.label;
     smsButton.setAttribute('aria-label', `Text LawMart: ${smsDetails.message}`);
     smsButton.dataset.track = 'sms_click';
     smsButton.dataset.service = smsDetails.service;
