@@ -150,13 +150,22 @@
   if (!document.querySelector('.sms-float')) {
     const smsButton = document.createElement('a');
     const bodySeparator = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
-    smsButton.className = 'sms-float';
+    const isHomepage = pagePath === '/' || pagePath === '/index.html';
+    smsButton.className = isHomepage ? 'header-sms' : 'sms-float';
     smsButton.href = `sms:+17029001003${bodySeparator}body=${encodeURIComponent(smsDetails.message)}`;
-    smsButton.textContent = smsDetails.label;
+    smsButton.textContent = isHomepage ? `✉ ${smsDetails.label}` : smsDetails.label;
     smsButton.setAttribute('aria-label', `Text LawMart: ${smsDetails.message}`);
     smsButton.dataset.track = 'sms_click';
     smsButton.dataset.service = smsDetails.service;
-    document.body.appendChild(smsButton);
+    const headerActions = document.querySelector('.header-actions');
+    if (isHomepage && headerActions) {
+      headerActions.prepend(smsButton);
+      const mobileSms = smsButton.cloneNode(true);
+      mobileSms.className = 'mobile-sms';
+      document.querySelector('.primary-nav')?.appendChild(mobileSms);
+    } else {
+      document.body.appendChild(smsButton);
+    }
   }
 
   document.querySelectorAll('[data-google-business]').forEach(link => {
