@@ -147,24 +147,29 @@
     };
   })();
 
-  if (!document.querySelector('.sms-float')) {
+  if (!document.querySelector('.header-sms, .sms-float')) {
     const smsButton = document.createElement('a');
     const bodySeparator = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
-    const isHomepage = pagePath === '/' || pagePath === '/index.html';
-    smsButton.className = isHomepage ? 'header-sms' : 'sms-float';
+    const headerActions = document.querySelector('.header-actions');
+    const headerCta = document.querySelector('.header-cta');
+    const hasHeaderPlacement = Boolean(headerActions || headerCta?.parentElement);
+    smsButton.className = hasHeaderPlacement ? 'header-sms' : 'sms-float';
     smsButton.href = `sms:+17029001003${bodySeparator}body=${encodeURIComponent(smsDetails.message)}`;
-    smsButton.textContent = isHomepage ? `✉ ${smsDetails.label}` : smsDetails.label;
+    smsButton.textContent = hasHeaderPlacement ? `✉ ${smsDetails.label}` : smsDetails.label;
     smsButton.setAttribute('aria-label', `Text LawMart: ${smsDetails.message}`);
     smsButton.dataset.track = 'sms_click';
     smsButton.dataset.service = smsDetails.service;
-    const headerActions = document.querySelector('.header-actions');
-    if (isHomepage && headerActions) {
+    if (headerActions) {
       headerActions.prepend(smsButton);
+    } else if (headerCta?.parentElement) {
+      headerCta.parentElement.insertBefore(smsButton, headerCta);
+    } else {
+      document.body.appendChild(smsButton);
+    }
+    if (hasHeaderPlacement) {
       const mobileSms = smsButton.cloneNode(true);
       mobileSms.className = 'mobile-sms';
       document.querySelector('.primary-nav')?.appendChild(mobileSms);
-    } else {
-      document.body.appendChild(smsButton);
     }
   }
 
