@@ -80,6 +80,6 @@
 @media(max-width:620px){.sms-float{right:14px;bottom:14px;min-height:46px;padding:0 15px;font-size:10px}}
 
 /* Shared header SMS action */
-.header-sms{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 15px;border:2px solid var(--gold);border-radius:14px;background:var(--navy);color:#fff!important;text-decoration:none;font-size:12px;font-weight:900;white-space:nowrap;box-shadow:0 10px 24px rgba(8,31,55,.16);transition:transform .2s,background .2s}.header-sms:hover{background:#123f6c;color:#fff!important;transform:translateY(-1px)}.mobile-sms{display:none!important}
+.site-header.v2 .header-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}.site-header.v2 .header-actions .header-cta{margin-left:0}.header-sms{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 15px;border:2px solid var(--gold);border-radius:14px;background:var(--navy);color:#fff!important;text-decoration:none;font-size:12px;font-weight:900;white-space:nowrap;box-shadow:0 10px 24px rgba(8,31,55,.16);transition:transform .2s,background .2s}.header-sms:hover{background:#123f6c;color:#fff!important;transform:translateY(-1px)}.mobile-sms{display:none!important}
 @media(max-width:1180px){.header-sms{padding:0 11px;font-size:11px}}
 @media(max-width:900px){.header-sms{display:none}.primary-nav.v2 .mobile-sms{display:block!important;margin-top:6px;padding:13px 12px!important;border-radius:10px;background:var(--navy);color:#fff!important;text-align:center}}

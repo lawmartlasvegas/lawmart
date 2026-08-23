@@ -7,10 +7,10 @@ body.lawmart-v2-subpage .site-header.v2{height:auto;background:rgba(255,255,255,
 body.lawmart-v2-subpage .site-header.v2 .nav-shell{height:84px;gap:24px}
 body.lawmart-v2-subpage .brand-v2{width:250px;display:flex;align-items:center;flex:0 0 auto}
 body.lawmart-v2-subpage .brand-v2 img{width:100%;height:auto}
-body.lawmart-v2-subpage .primary-nav.v2{gap:28px}
+body.lawmart-v2-subpage .primary-nav.v2{gap:26px}
 body.lawmart-v2-subpage .primary-nav.v2 a{font-size:14px;font-weight:750;color:#102d4b}
 body.lawmart-v2-subpage .primary-nav.v2 a:hover{color:var(--lm-gold)}
-body.lawmart-v2-subpage .header-cta{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 21px;border-radius:14px;background:linear-gradient(135deg,#e8a900,#f6be2c);color:#092b4b;font-size:14px;font-weight:850;box-shadow:0 12px 26px rgba(233,169,0,.2);white-space:nowrap}
+body.lawmart-v2-subpage .header-cta{margin-left:0;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 21px;border-radius:14px;background:linear-gradient(135deg,#e8a900,#f6be2c);color:#092b4b;font-size:14px;font-weight:850;box-shadow:0 12px 26px rgba(233,169,0,.2);white-space:nowrap}
 body.lawmart-v2-subpage .header-cta:hover{transform:translateY(-1px);box-shadow:0 15px 30px rgba(233,169,0,.28)}
 body.lawmart-v2-subpage .eyebrow,body.lawmart-v2-subpage .eyebrow.dark{font:800 12px/1.2 inherit;letter-spacing:.22em;color:#9c6800;text-transform:uppercase}
 body.lawmart-v2-subpage .button{border-radius:12px;min-height:54px;padding:0 24px;font-size:12px;font-weight:850;letter-spacing:.02em;text-transform:none}
