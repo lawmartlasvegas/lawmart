@@ -150,8 +150,14 @@
   if (!document.querySelector('.header-sms, .sms-float')) {
     const smsButton = document.createElement('a');
     const bodySeparator = /iPad|iPhone|iPod/.test(navigator.userAgent) ? '&' : '?';
-    const headerActions = document.querySelector('.header-actions');
+    let headerActions = document.querySelector('.header-actions');
     const headerCta = document.querySelector('.header-cta');
+    if (!headerActions && headerCta?.parentElement) {
+      headerActions = document.createElement('div');
+      headerActions.className = 'header-actions';
+      headerCta.parentElement.insertBefore(headerActions, headerCta);
+      headerActions.appendChild(headerCta);
+    }
     const hasHeaderPlacement = Boolean(headerActions || headerCta?.parentElement);
     smsButton.className = hasHeaderPlacement ? 'header-sms' : 'sms-float';
     smsButton.href = `sms:+17029001003${bodySeparator}body=${encodeURIComponent(smsDetails.message)}`;
