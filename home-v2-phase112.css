@@ -364,3 +364,23 @@
 .home-v2 .service-price-note span{font-size:13px;font-weight:800;color:#67798B;text-align:right}
 .home-v2 .service-v2::after{display:none}
 @media(max-width:600px){.home-v2 .service-pay-button,.home-v2 .service-price-note{margin:0 16px 16px}.home-v2 .service-info-link{padding:24px 20px 20px}}
+
+/* Phase 3.17: align the homepage mobile header and hero with LawMart subpages */
+@media (max-width:850px){
+  body.home-v2{max-width:100%;overflow-x:hidden;padding-top:74px}
+  .home-v2 .site-header.v2{position:fixed!important;top:0;left:0;right:0;width:100%;z-index:1200}
+  .home-v2 .header-actions{display:flex!important;margin-left:auto}
+  .home-v2 .header-cta{display:inline-flex!important;min-height:42px;padding:0 12px!important;font-size:0!important;border-radius:10px}
+  .home-v2 .header-cta::after{content:"Book Free Call";font-size:12px;line-height:1;white-space:nowrap}
+  .home-v2 .menu-toggle{margin-left:0!important;flex:0 0 auto}
+  .home-v2 .primary-nav.v2.open{top:74px}
+  .home-v2 .hero-art{display:none!important}
+}
+@media (max-width:600px){
+  body.home-v2{padding-top:72px}
+  .home-v2 .site-header.v2 .nav-shell{min-height:72px}
+  .home-v2 .brand-v2{width:145px!important}
+  .home-v2 .header-cta{min-height:40px;padding:0 10px!important}
+  .home-v2 .header-cta::after{font-size:11px}
+  .home-v2 .primary-nav.v2.open{top:72px}
+}
