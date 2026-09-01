@@ -59,33 +59,6 @@ body.lawmart-v2-subpage .service-cta h2{font-family:inherit;font-weight:850;lett
 body.lawmart-v2-subpage .service-cta .button-gold{background:var(--lm-navy);color:#fff;box-shadow:none}
 body.lawmart-v2-subpage .faq{background:#fff}
 body.lawmart-v2-subpage .accordion details{border-color:#dce4eb}.accordion summary{font-family:inherit!important;font-weight:750!important;color:var(--lm-navy)!important}
-
-
-/* Phase 3.16: mobile landing-page conversion and overflow repair */
-@media (max-width:900px){
-  html,body.lawmart-v2-subpage{max-width:100%;overflow-x:hidden}
-  body.lawmart-v2-subpage .site-header.v2 .nav-shell{gap:10px}
-  body.lawmart-v2-subpage .header-actions{display:flex;margin-left:auto}
-  body.lawmart-v2-subpage .header-cta{display:inline-flex!important;min-height:42px;padding:0 12px!important;font-size:0!important;border-radius:10px}
-  body.lawmart-v2-subpage .header-cta::after{content:"Book Free Call";font-size:12px;line-height:1;white-space:nowrap}
-  body.lawmart-v2-subpage .menu-toggle{margin-left:0!important;flex:0 0 auto}
-  body.lawmart-v2-subpage .service-hero{width:100%;max-width:100%;overflow:hidden}
-  body.lawmart-v2-subpage .service-hero-inner{width:100%!important;max-width:100%!important;margin:0!important;padding:30px 20px 42px!important}
-  body.lawmart-v2-subpage .service-hero-copy{width:100%!important;max-width:100%!important;margin:28px 0 0!important;padding:0!important}
-  body.lawmart-v2-subpage .service-hero-copy h1{max-width:100%!important}
-  body.lawmart-v2-subpage .service-hero-copy>p:not(.eyebrow){max-width:100%!important}
-  body.lawmart-v2-subpage .hero-actions{width:100%;display:grid!important;grid-template-columns:1fr;gap:12px;margin:26px 0!important}
-  body.lawmart-v2-subpage .hero-actions .button{width:100%}
-}
-@media (max-width:620px){
-  body.lawmart-v2-subpage .site-header.v2 .nav-shell{height:72px;gap:8px}
-  body.lawmart-v2-subpage .brand-v2{width:145px!important}
-  body.lawmart-v2-subpage .header-cta{min-height:40px;padding:0 10px!important}
-  body.lawmart-v2-subpage .header-cta::after{font-size:11px}
-  body.lawmart-v2-subpage .service-hero-inner{padding:24px 16px 36px!important}
-  body.lawmart-v2-subpage .service-hero-copy{margin-top:22px!important}
-  body.lawmart-v2-subpage .service-hero-copy h1{font-size:clamp(36px,11vw,43px)!important;line-height:1.02!important}
-}
 /* Pricing */
 body.lawmart-v2-subpage .pricing-hero{padding:100px 0;background:radial-gradient(circle at 80% 30%,rgba(233,169,0,.23),transparent 28%),linear-gradient(135deg,#092f55,#0d416f);color:#fff}
 body.lawmart-v2-subpage .pricing-hero h1{font-family:inherit;font-weight:850;letter-spacing:-.055em}
@@ -119,6 +92,32 @@ body.lawmart-v2-subpage .footer-bottom-v2{border-top:1px solid rgba(255,255,255,
 @media(max-width:1050px){
  body.lawmart-v2-subpage .site-header.v2 .nav-shell{height:76px}.brand-v2{width:205px!important}.primary-nav.v2{gap:18px!important}.primary-nav.v2 a{font-size:12px!important}.header-cta{padding:0 15px!important;font-size:12px!important}
  body.lawmart-v2-subpage .service-hero-media{left:55%}.service-hero-copy{max-width:58%!important}.service-hero-copy h1{font-size:clamp(42px,5vw,60px)!important}
+}
+
+/* Phase 3.16: mobile landing-page conversion and overflow repair */
+@media (max-width:900px){
+  html,body.lawmart-v2-subpage{max-width:100%;overflow-x:hidden}
+  body.lawmart-v2-subpage .site-header.v2 .nav-shell{gap:10px}
+  body.lawmart-v2-subpage .header-actions{display:flex;margin-left:auto}
+  body.lawmart-v2-subpage .header-cta{display:inline-flex!important;min-height:42px;padding:0 12px!important;font-size:0!important;border-radius:10px}
+  body.lawmart-v2-subpage .header-cta::after{content:"Book Free Call";font-size:12px;line-height:1;white-space:nowrap}
+  body.lawmart-v2-subpage .menu-toggle{margin-left:0!important;flex:0 0 auto}
+  body.lawmart-v2-subpage .service-hero{width:100%;max-width:100%;overflow:hidden}
+  body.lawmart-v2-subpage .service-hero-inner{width:100%!important;max-width:100%!important;margin:0!important;padding:30px 20px 42px!important}
+  body.lawmart-v2-subpage .service-hero-copy{width:100%!important;max-width:100%!important;margin:28px 0 0!important;padding:0!important}
+  body.lawmart-v2-subpage .service-hero-copy h1{max-width:100%!important}
+  body.lawmart-v2-subpage .service-hero-copy>p:not(.eyebrow){max-width:100%!important}
+  body.lawmart-v2-subpage .hero-actions{width:100%;display:grid!important;grid-template-columns:1fr;gap:12px;margin:26px 0!important}
+  body.lawmart-v2-subpage .hero-actions .button{width:100%}
+}
+@media (max-width:620px){
+  body.lawmart-v2-subpage .site-header.v2 .nav-shell{height:72px;gap:8px}
+  body.lawmart-v2-subpage .brand-v2{width:145px!important}
+  body.lawmart-v2-subpage .header-cta{min-height:40px;padding:0 10px!important}
+  body.lawmart-v2-subpage .header-cta::after{font-size:11px}
+  body.lawmart-v2-subpage .service-hero-inner{padding:24px 16px 36px!important}
+  body.lawmart-v2-subpage .service-hero-copy{margin-top:22px!important}
+  body.lawmart-v2-subpage .service-hero-copy h1{font-size:clamp(36px,11vw,43px)!important;line-height:1.02!important}
 }
 @media(max-width:900px){
  body.lawmart-v2-subpage .header-cta{display:none}.primary-nav.v2{display:none}.menu-toggle{display:block!important}
@@ -276,11 +275,9 @@ body.lawmart-v2-subpage .divorce-fees-cta-actions small{display:block;text-align
   align-items: center;
   justify-content: center;
   width: 42px;
-
-
-/* Phase 3.16: mobile landing-page conversion and overflow repair */
-@media (max-width:900px){
-  der-radius: 50%;
+  height: 42px;
+  margin-bottom: 22px;
+  border-radius: 50%;
   background: #fff2c9;
   color: #9c6800;
   font-size: .82rem;
