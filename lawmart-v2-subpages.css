@@ -97,12 +97,14 @@ body.lawmart-v2-subpage .footer-bottom-v2{border-top:1px solid rgba(255,255,255,
 /* Phase 3.16: mobile landing-page conversion and overflow repair */
 @media (max-width:900px){
   html,body.lawmart-v2-subpage{max-width:100%;overflow-x:hidden}
+  body.lawmart-v2-subpage .site-header.v2{position:sticky;top:0;z-index:1200}
   body.lawmart-v2-subpage .site-header.v2 .nav-shell{gap:10px}
   body.lawmart-v2-subpage .header-actions{display:flex;margin-left:auto}
   body.lawmart-v2-subpage .header-cta{display:inline-flex!important;min-height:42px;padding:0 12px!important;font-size:0!important;border-radius:10px}
   body.lawmart-v2-subpage .header-cta::after{content:"Book Free Call";font-size:12px;line-height:1;white-space:nowrap}
   body.lawmart-v2-subpage .menu-toggle{margin-left:0!important;flex:0 0 auto}
   body.lawmart-v2-subpage .service-hero{width:100%;max-width:100%;overflow:hidden}
+  body.lawmart-v2-subpage .service-hero-media{display:none!important}
   body.lawmart-v2-subpage .service-hero-inner{width:100%!important;max-width:100%!important;margin:0!important;padding:30px 20px 42px!important}
   body.lawmart-v2-subpage .service-hero-copy{width:100%!important;max-width:100%!important;margin:28px 0 0!important;padding:0!important}
   body.lawmart-v2-subpage .service-hero-copy h1{max-width:100%!important}
