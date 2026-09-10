@@ -172,11 +172,9 @@
     } else {
       document.body.appendChild(smsButton);
     }
-    if (hasHeaderPlacement) {
-      const mobileSms = smsButton.cloneNode(true);
-      mobileSms.className = 'mobile-sms';
-      document.querySelector('.primary-nav')?.appendChild(mobileSms);
-    }
+    // Keep the text action in the persistent header on every viewport.
+    // A second copy in the mobile menu made the fastest contact option harder
+    // to find and could leave two equivalent SMS links on the same page.
   }
 
   document.querySelectorAll('[data-google-business]').forEach(link => {
