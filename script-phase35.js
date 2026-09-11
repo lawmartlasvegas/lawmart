@@ -95,8 +95,14 @@
     const link = event.target.closest('a,button');
     if (!link) return;
     const href = link.getAttribute('href') || '';
-    const common = {link_text:(link.textContent||'').trim().replace(/\s+/g,' ').slice(0,100), link_url:link.href||href};
-    if (link.dataset.track) track(link.dataset.track, {...common, service_name:link.dataset.service||undefined});
+    const ctaLocation = link.closest('.site-header') ? 'header' :
+      link.closest('.service-hero,.pricing-hero,.hero-v2') ? 'hero' :
+      link.closest('.divorce-fees-cta,.secure-pay-card,.service-cta,.pricing-page') ? 'body' : 'other';
+    const common = {link_text:(link.textContent||'').trim().replace(/\s+/g,' ').slice(0,100), link_url:link.href||href, cta_location:ctaLocation};
+    if (link.dataset.track) {
+      track(link.dataset.track, {...common, service_name:link.dataset.service||undefined});
+      if (link.dataset.track === 'cal_free_consultation') track(`consultation_${ctaLocation}_click`, common);
+    }
     else if (href.startsWith('sms:')) track('sms_click', common);
     else if (href.startsWith('tel:')) track('phone_click', common);
     else if (href.startsWith('mailto:')) track('email_click', common);
@@ -436,9 +442,14 @@
     const service = el.dataset.service || undefined;
     if (el.matches('[data-cal-link]')) {
       const slug = el.dataset.calLink || '';
+      const ctaLocation = el.closest('.site-header') ? 'header' :
+        el.closest('.service-hero,.pricing-hero,.hero-v2') ? 'hero' :
+        el.closest('.divorce-fees-cta,.secure-pay-card,.service-cta,.pricing-page') ? 'body' : 'other';
       track('appointment_start', {
         appointment_type: slug.includes('in-person') ? 'in_person' : 'free_phone',
-        service_name: service
+        service_name: service,
+        cta_location: ctaLocation,
+        link_text:(el.textContent||'').trim().replace(/\s+/g,' ').slice(0,100)
       });
     }
     if (/buy\.stripe\.com/i.test(href)) {
