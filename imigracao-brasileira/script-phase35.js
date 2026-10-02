@@ -6,7 +6,8 @@
   campaignKeys.forEach(k=>{if(params[k])campaign[k]=params[k]}); try{sessionStorage.setItem('lawmartCampaign',JSON.stringify(campaign))}catch{}
   window.dataLayer=window.dataLayer||[]; window.gtag=window.gtag||function(){dataLayer.push(arguments)};
   if(cfg.GA4_MEASUREMENT_ID&&!document.querySelector('script[data-lawmart-ga4]')){const ga=document.createElement('script');ga.async=true;ga.dataset.lawmartGa4='true';ga.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(cfg.GA4_MEASUREMENT_ID);document.head.appendChild(ga);gtag('js',new Date());gtag('config',cfg.GA4_MEASUREMENT_ID,{anonymize_ip:true});if(cfg.GOOGLE_ADS_ID&&/^AW-[0-9]+$/.test(cfg.GOOGLE_ADS_ID))gtag('config',cfg.GOOGLE_ADS_ID);if(cfg.GOOGLE_ADS_PHONE_SEND_TO&&cfg.GOOGLE_ADS_PHONE_CONVERSION_NUMBER)gtag('config',cfg.GOOGLE_ADS_PHONE_SEND_TO,{phone_conversion_number:String(cfg.GOOGLE_ADS_PHONE_CONVERSION_NUMBER)})}
-  const track=(name,extra={})=>{if(typeof gtag==='function')gtag('event',name,{brand:'imigracao_brasileira',page_path:location.pathname,...campaign,...extra})};
+  const currentService=document.body.dataset.service||'nao_informado';
+  const track=(name,extra={})=>{if(typeof gtag==='function')gtag('event',name,{brand:'imigracao_brasileira',service_name:currentService,page_path:location.pathname,...campaign,...extra})};
   const menu=document.querySelector('.menu'),links=document.querySelector('.links');menu?.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
   const io='IntersectionObserver'in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12}):null;document.querySelectorAll('.reveal').forEach(el=>io?io.observe(el):el.classList.add('visible'));document.getElementById('year')&&(document.getElementById('year').textContent=new Date().getFullYear());
   document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'',common={link_text:(a.textContent||'').trim().replace(/\s+/g,' ').slice(0,100),link_url:a.href||href};if(/wa\.me|whatsapp\.com/i.test(href))track('whatsapp_click',common);else if(href.startsWith('sms:'))track('sms_click',common);else if(href.startsWith('tel:'))track('phone_click',common);else if(href.startsWith('mailto:'))track('email_click',common)});
@@ -99,6 +100,7 @@
     if(!a) return;
     if(typeof gtag==='function') gtag('event', a.dataset.track, {
       brand:'imigracao_brasileira',
+      service_name:document.body.dataset.service||'nao_informado',
       page_path:location.pathname,
       link_url:a.href
     });
@@ -119,7 +121,8 @@
         const uid=typeof data.uid==='string'?data.uid.slice(0,120):'';
         const key=`imigracaoBooking:${type}:${uid||data.startTime||new Date().toISOString()}`;
         try{if(sessionStorage.getItem(key))return;sessionStorage.setItem(key,'1')}catch{}
-        if(typeof gtag==='function')gtag('event','appointment_booked',{brand:'imigracao_brasileira',page_path:location.pathname,appointment_type:type,conversion_source:'cal_embed',booking_status:typeof data.status==='string'?data.status:undefined,payment_required:typeof data.paymentRequired==='boolean'?data.paymentRequired:undefined,currency:type==='in_person'?'USD':undefined,value:type==='in_person'?50:undefined});
+        let campaign={};try{campaign=JSON.parse(sessionStorage.getItem('lawmartCampaign')||'{}')}catch{}
+        if(typeof gtag==='function')gtag('event','appointment_booked',{brand:'imigracao_brasileira',service_name:document.body.dataset.service||'nao_informado',page_path:location.pathname,...campaign,appointment_type:type,conversion_source:'cal_embed',booking_status:typeof data.status==='string'?data.status:undefined,payment_required:typeof data.paymentRequired==='boolean'?data.paymentRequired:undefined,currency:type==='in_person'?'USD':undefined,value:type==='in_person'?50:undefined});
       }});registered+=1;
     });
     if(registered===namespaces.length)window.__imigracaoCalSuccessRegistered=true;
