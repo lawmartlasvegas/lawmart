@@ -10,3 +10,42 @@
 
 .sms-float{position:fixed;right:22px;bottom:82px;z-index:40;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;font-weight:900;box-shadow:0 14px 34px rgba(0,0,0,.22);transition:transform .2s}.sms-float:before{content:'\2709';margin-right:8px}.sms-float:hover{transform:translateY(-2px)}
 @media(max-width:620px){.sms-float{right:14px;bottom:70px;min-height:44px;padding:0 14px;font-size:.84rem}}
+
+/* Consolidated Portuguese immigration launch candidate */
+.launch-services{grid-template-columns:repeat(3,1fr)}
+.launch-services .goal{min-height:205px}
+.launch-price-card{display:grid;grid-template-columns:1.2fr .65fr .9fr;gap:34px;align-items:center;padding:38px;border:1px solid var(--line);border-top:5px solid var(--yellow);border-radius:28px;background:#fff;box-shadow:var(--shadow)}
+.launch-price-card h2,.two-panels h2,.docs-grid h2{font-size:clamp(2rem,3.5vw,3.25rem);color:var(--deep);margin:10px 0 18px}
+.launch-price-card p{color:var(--muted);margin:8px 0}
+.launch-price{padding:24px;text-align:center;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.launch-price small,.launch-price span{display:block;color:var(--muted);font-size:.78rem}
+.launch-price strong{display:block;color:var(--blue);font:700 2.7rem/1.1 Georgia,serif;margin:8px 0}
+.two-panels{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.two-panels>div{min-width:0}
+.exclusions span{color:#9c3a36}
+.attorney-note{margin:20px 0 0;padding:20px;border-left:5px solid var(--yellow);border-radius:0 14px 14px 0;background:#fff9dd;color:#544814;font-weight:700}
+.docs-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.mobile-cta{display:none}
+.cta .small a{color:#fff;font-weight:800}
+body{overflow-x:hidden}
+.menu{min-width:48px;min-height:48px}
+.contact-card button{min-height:48px}
+@media(max-width:950px){.launch-services{grid-template-columns:repeat(2,1fr)}.launch-price-card,.two-panels,.docs-grid{grid-template-columns:1fr}.launch-price{text-align:left;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}}
+@media(max-width:620px){
+  body{padding-bottom:70px}
+  h1{font-size:clamp(2.45rem,12vw,3.6rem)}
+  .hero,.service-hero{padding:46px 0 42px}
+  .hero-art,.service-symbol{display:none}
+  .hero-grid,.service-hero-grid{display:block}
+  .launch-services{grid-template-columns:1fr}
+  .launch-price-card{padding:26px 20px}
+  .topbar .container{min-height:44px}
+  .topbar .container>div{display:flex;gap:10px;align-items:center}
+  .topbar .container>div a{display:inline-flex;align-items:center;min-height:44px;font-size:.78rem}
+  .hero-actions .button{width:100%}
+  .mobile-cta{position:fixed;display:grid;grid-template-columns:1.4fr .6fr;gap:8px;left:0;right:0;bottom:0;z-index:60;padding:8px 12px;background:rgba(255,255,255,.98);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(6,62,43,.13)}
+  .mobile-cta .button{min-height:48px;padding:10px 13px;font-size:.9rem}
+  .whatsapp-float,.sms-float{display:none}
+  .notice .container{display:block;text-align:left;padding:16px 0}
+  .footer a{display:flex;align-items:center;min-height:44px;margin:0}
+}
