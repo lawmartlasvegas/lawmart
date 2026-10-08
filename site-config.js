@@ -1,7 +1,7 @@
 window.LAWMART_CONFIG = {
   GA4_MEASUREMENT_ID: "G-43CBCXFRX3",
   GOOGLE_ADS_ID: "AW-18347713352",
-  GOOGLE_ADS_PHONE_SEND_TO: "AW-18347713352/o9rxCPzduuIcEMjG76xE",
+  GOOGLE_ADS_PHONE_SEND_TO: "AW-18347713352/O9rXCPzduuIcEMjG76xE",
   GOOGLE_ADS_PHONE_CONVERSION_NUMBER: "7029001003",
   GOOGLE_BUSINESS_URL: "https://www.google.com/search?q=LawMart+Las+Vegas",
   BOOKING_URL: "https://cal.com/brenden-greystone-dhxm1y/free-phone-consultation",
