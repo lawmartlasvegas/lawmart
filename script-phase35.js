@@ -51,6 +51,24 @@
   };
   window.lawmartTrack = track;
 
+  // Let Analytics dispatch a confirmed lead before leaving the form page.
+  // The timeout keeps the thank-you redirect working if tags are blocked.
+  const trackLeadAndRedirect = (params) => {
+    let navigated = false;
+    const finish = () => {
+      if (navigated) return;
+      navigated = true;
+      location.href = '/thank-you/';
+    };
+    setTimeout(finish, 1600);
+    track('generate_lead', {
+      ...params,
+      transport_type: 'beacon',
+      event_callback: finish,
+      event_timeout: 1500
+    });
+  };
+
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.primary-nav');
   menuButton?.addEventListener('click', () => {
@@ -240,9 +258,9 @@
         const response=await fetch(config.FORM_ENDPOINT,{method:'POST',body:data,headers:{Accept:'application/json'}});
         if(!response.ok) throw new Error('Submission failed');
         try { sessionStorage.setItem('lawmartLeadComplete','1'); } catch {}
-        track('generate_lead',{service_name:service, method:'online_form'});
         if (config.GOOGLE_ADS_SEND_TO) gtag('event','conversion',{send_to:config.GOOGLE_ADS_SEND_TO});
-        location.href='/thank-you/'; return;
+        trackLeadAndRedirect({service_name:service, method:'online_form'});
+        return;
       }catch(err){
         track('form_error', {form_name:'consultation_intake', error_type:'endpoint'});
         if(status){status.textContent='Online submission was unavailable. Opening your email application instead.';status.classList.add('error')}
@@ -318,9 +336,8 @@
         const response=await fetch(config.FORM_ENDPOINT || form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});
         if(!response.ok) throw new Error('Submission failed');
         try{sessionStorage.setItem('lawmartLeadComplete','1')}catch{}
-        track('generate_lead',{form_name:'service_intake_single_panel',service_name:service,method:'online_form'});
         if(config.GOOGLE_ADS_SEND_TO) gtag('event','conversion',{send_to:config.GOOGLE_ADS_SEND_TO});
-        location.href='/thank-you/';
+        trackLeadAndRedirect({form_name:'service_intake_single_panel',service_name:service,method:'online_form'});
       }catch(error){
         submit.disabled=false;
         submit.removeAttribute('aria-busy');
